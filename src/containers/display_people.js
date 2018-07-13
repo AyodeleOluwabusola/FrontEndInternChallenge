@@ -12,6 +12,7 @@ class DisplayPeople extends Component{
         //console.log(peopleData.persons.length)
         for (let i = 0; i < peopleData.persons.length; i++){
             var displayPeople = peopleData.persons
+            console.log(peopleData.persons.length)
         
         
          return(

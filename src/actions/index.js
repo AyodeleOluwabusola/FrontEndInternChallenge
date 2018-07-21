@@ -10,14 +10,14 @@ export const FETCH_PERSON = 'FETCH_PERSON';
 export function fetchData() {
     const peopleUrl = `${BASE_URL}`;
     const request= axios.get(peopleUrl)
-
+   
     return{
         type: FETCH_PEOPLEDATA,
         payload: request
     }
 }
 
-export function createPeopleData(id) {
+export function createPeopleData(description) {
     const request = axios.post(`${BASE_URL}/persons/${id}`)
     return {
         type: CREATE_PEOPLEDATA,

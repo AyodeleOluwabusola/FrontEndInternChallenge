@@ -1,7 +1,5 @@
 import { FETCH_PEOPLEDATA } from "../actions/index";
 
-//import {FETCH_PEOPLE} from '../actions/index';
-
 export default function(state= [], action) {
     console.log('Action is here:',action);
     switch(action.type){

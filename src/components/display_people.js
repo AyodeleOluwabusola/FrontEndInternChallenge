@@ -3,13 +3,13 @@ import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 
 class DisplayPeople extends Component {
-    
+
     renderPeopleData({ id, name, photo_thumb }) {
         return (
             <tr key={id}>
                 <td><a href={photo_thumb}><img src={photo_thumb} alt={name} /> </a></td>
                 <td>{name}</td>
-                    <td><Link to={`/persons/${id}`}> Show More</Link></td>
+                <td><Link to={`/persons/${id}`}> Show More</Link></td>
             </tr>
         )
     }
@@ -32,9 +32,8 @@ class DisplayPeople extends Component {
 
 const mapStateToProps = (state) => {
     return {
-       people:state.people
+        people: state.people
     }
 }
 
 export default connect(mapStateToProps)(DisplayPeople);
-

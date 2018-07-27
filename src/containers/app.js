@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import DisplayPeople from '../components/display_people';
-import { connect  } from 'react-redux'; 
+import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import  { fetchData } from '../actions/index';
+import { fetchData } from '../actions/index';
 
 
 class App extends Component {
-  componentWillMount(){
+  componentWillMount() {
     return this.props.fetchData();
   }
 
@@ -21,7 +21,7 @@ class App extends Component {
 
 
 const mapDispatchProps = (dispatch) => {
-  return bindActionCreators({ fetchData },dispatch)
+  return bindActionCreators({ fetchData }, dispatch)
 }
 
 export default connect(null, mapDispatchProps)(App)

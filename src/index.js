@@ -2,14 +2,20 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import { createStore, applyMiddleware } from 'redux';
-
 import { BrowserRouter, Switch, Route,} from 'react-router-dom';
 
 import DisplayMore from './components/display_more';
-import App from './containers/app';
+// import App from './containers/app';
 import reducers from './reducers';
-import ReduxPromise from 'redux-promise';
+//import ReduxPromise from 'redux-promise';
+import App from './containers/app';
+//import reducers from './reducers';
+import ReduxPromise from 'redux-promise'
 
+
+
+
+const createStoreWithMiddleware = applyMiddleware(ReduxPromise)(createStore);
 
 const router = (
   <Provider store={createStoreWithMiddleware(reducers)}>
@@ -24,11 +30,4 @@ const router = (
 );
 
 ReactDOM.render(router, document.querySelector('.container'));
-
-const createStoreWithMiddleware = applyMiddleware(ReduxPromise )(createStore);
-
-ReactDOM.render(
-  <Provider store={createStoreWithMiddleware(reducers)}>
-    <App />
-  </Provider>
-  , document.querySelector('.container'));
+//const createStoreWithMiddleware = applyMiddleware(ReduxPromise )(createStore);
